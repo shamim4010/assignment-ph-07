@@ -10,7 +10,7 @@ function Footer() {
   return (
     <footer className="footer footer-horizontal footer-center bg  text-white p-24">
         <aside>
-            <Image src={footerLogo} />
+            <Image src={footerLogo} alt='footerlogo' />
             <p className="opacity-[0.7]">
                 Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
             </p>

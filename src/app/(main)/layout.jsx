@@ -1,11 +1,11 @@
 import Footer from "../../components/shared/Footer/Footer.jsx"
 import Navbar from "../../components/shared/Navbar/Navbar.jsx"
 
-function Mainlayout({Children}) {
+function Mainlayout({children}) {
   return (
     <>
         <Navbar />
-        {Children}
+        {children}
         <Footer />
     </>
   )

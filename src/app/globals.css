@@ -12,3 +12,7 @@
 .btn-bg,.bg {
   background-color: var(--bg-b);
 }
+
+p {
+  font-size: 12px;
+}

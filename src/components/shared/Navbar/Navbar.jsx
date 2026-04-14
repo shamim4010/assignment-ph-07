@@ -4,18 +4,21 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import Logo from '../../../assets/logo.png'
+import { FaHome } from 'react-icons/fa'
+import { IoTimeOutline } from 'react-icons/io5'
+import { ImStatsDots } from 'react-icons/im'
 
 function Navbar() {
     const pathName = usePathname()
 
     const links = <>
-        <li><Link href='/' className={pathName === '/' ? 'btn-bg text-white rounded-sm': ''}>Home</Link></li>
-        <li><Link href='/timline' className={pathName === '/timline' ? 'btn-bg text-white rounded-sm': ''}>Timeline</Link></li>
-        <li><Link href='/stats' className={pathName === '/stats' ? 'btn-bg text-white rounded-sm': ''}>Stats</Link></li>
+        <li><Link href='/' className={pathName === '/' ? 'btn-bg text-white rounded-sm': ''}><FaHome /> Home</Link></li>
+        <li><Link href='/timeline' className={pathName === '/timeline' ? 'btn-bg text-white rounded-sm': ''}><IoTimeOutline /> Timeline</Link></li>
+        <li><Link href='/stats' className={pathName === '/stats' ? 'btn-bg text-white rounded-sm': ''}><ImStatsDots /> Stats</Link></li>
     </>
 
   return (
-    <div className="max-lg:collapse bg-base-200 md:mb-48 shadow-sm w-full rounded-md">
+    <div className="max-lg:collapse bg-base-200 shadow-sm w-full rounded-md">
         <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
         <label htmlFor="navbar-1-toggle" className="fixed inset-0 hidden max-lg:peer-checked:block"></label>
         <div className="collapse-title navbar">
