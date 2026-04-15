@@ -9,10 +9,10 @@ function Cards({friend}) {
             <h2 className='text-2xl'>{friend.name}</h2>
             <p>{friend.days_since_contact}d ago</p>
             <p>{friend.work}</p>
-            <p>
-                <span className='bg-[#CBFADB] text-[#244D3F] px-2 py-[2px] rounded-4xl'>{friend.tags[0]}</span> <span className='bg-[#CBFADB] text-[#244D3F] px-2 py-[2px] rounded-4xl'>{friend.tags[1]}</span>
+            <p className='flex justify-center items-center uppercase'>
+                <span className='bg-[#CBFADB] text-[#244D3F] text-[10px] px-2 py-[2px] rounded-4xl'>{friend.tags[0]}</span> <span className='bg-[#CBFADB] text-[#244D3F] text-[10px] px-2 py-[2px] rounded-4xl'>{friend.tags[1]}</span>
             </p>
-            <p>
+            <p className={`px-2 py-[2px] rounded-4xl ${friend.status === 'Active' ? 'bg-[#EFAD44] text-white': friend.status === 'On-Track' ? 'bg-[#244D3F] text-white':'bg-[#EF4444] text-white'}`}>
                 {friend.status}
             </p>
         </div>

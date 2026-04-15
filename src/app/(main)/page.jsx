@@ -1,8 +1,7 @@
-import { Suspense } from "react";
-import CounterDashboard from "../../components/ui/counterDashboard/CounterDashboard.jsx";
+import { Suspense} from "react";
 import { GoPlus } from "react-icons/go";
 import Loading from "./loading.jsx";
-import FriendsCards from "../../components/ui/friends/FriendsCards.jsx";
+import MainBody from "../../components/ui/bodyUi/MainBody.jsx";
 
 const friendsP = async () => {
   const res = await fetch('http://localhost:3000/friends.json');
@@ -19,11 +18,8 @@ async function Home() {
         <p className="opacity-[0.7]">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
         <button className="btn bg text-white rounded-md"><GoPlus /> Add a Friend</button>
       </div>
-      <div>
-        <CounterDashboard />
-      </div>
       <Suspense fallback={<Loading />}>
-        <FriendsCards friendsPromise={friendsPromise} />
+        <MainBody friendsPromise={friendsPromise} />
       </Suspense>
     </div>
   )
