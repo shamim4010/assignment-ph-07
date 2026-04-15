@@ -23,7 +23,7 @@ function Navbar() {
         <label htmlFor="navbar-1-toggle" className="fixed inset-0 hidden max-lg:peer-checked:block"></label>
         <div className="collapse-title navbar">
             <div className="navbar-start">
-            <label htmlFor="navbar-1-toggle" className="btn border-none md:hidden">
+            <label htmlFor="navbar-1-toggle" className="btn border-none lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
             <Link href="/">
@@ -33,14 +33,14 @@ function Navbar() {
             </Link>
             </div>
             <div className="navbar-end flex">
-                <ul className="menu menu-horizontal px-1 hidden md:flex">
+                <ul className="menu menu-horizontal px-1 hidden lg:flex">
                 {links} 
                 </ul>
                 <input type="search" placeholder="Find friends" className="input border-2 border-gray-200 focus:border-[#244D3F] text-[#244D3F] rounded-lg  w-60 lg:w-auto" />
             </div>
         </div>
 
-        <div className="collapse-content md:hidden z-1">
+        <div className="collapse-content lg:hidden z-1">
             <ul className="menu">
                 {links}
             </ul>
