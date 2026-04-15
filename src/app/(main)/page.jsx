@@ -18,6 +18,7 @@ async function Home() {
         <p className="opacity-[0.7]">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
         <button className="btn bg text-white rounded-md"><GoPlus /> Add a Friend</button>
       </div>
+
       <Suspense fallback={<Loading />}>
         <MainBody friendsPromise={friendsPromise} />
       </Suspense>

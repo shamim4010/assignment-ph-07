@@ -1,8 +1,9 @@
 import React from 'react'
+import { FadeLoader } from 'react-spinners'
 
 function Loading() {
   return (
-    <div>L</div>
+    <div><FadeLoader /></div>
   )
 }
 

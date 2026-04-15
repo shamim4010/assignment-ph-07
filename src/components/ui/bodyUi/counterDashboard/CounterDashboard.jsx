@@ -2,7 +2,7 @@ import React from 'react'
 
 function CounterDashboard({count, onTrack, active}) {
   return (
-    <div className="stats stats-vertical md:stats-horizontal md:gap-24 shadow-lg text-center">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 md:gap-24 shadow-lg text-center">
         <div className="stat">
             <div className="stat-value">{count}</div>
             <div className="stat-title">Total Friends</div>

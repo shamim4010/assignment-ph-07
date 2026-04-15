@@ -10,6 +10,7 @@ function MainBody({friendsPromise}) {
     return (
         <>
             <CounterDashboard {...{count, onTrack, active}} />
+            <h2 className="text-3xl w-full p-8">Your Friends</h2>
             <FriendsCards {...{friendsPromise, setCount, setOnTrack, setActive}} />
         </>
     )
