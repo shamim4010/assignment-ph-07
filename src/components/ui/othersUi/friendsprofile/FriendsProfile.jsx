@@ -1,7 +1,7 @@
 import React, { use } from 'react'
 import Card from './friendsProfileCards/Card';
 
-function FriendsProfile({names, friendsPromise, setTimelineData}) {
+function FriendsProfile({names, friendsPromise}) {
     const friends = use(friendsPromise);
     console.log(friends)
     console.log(names)
@@ -11,7 +11,7 @@ function FriendsProfile({names, friendsPromise, setTimelineData}) {
         <div>
             {filterFriends.map(friend => {
                 return (
-                   <Card key={friend.id} {...{friend, setTimelineData}} /> 
+                   <Card key={friend.id} {...{friend}} /> 
                 )
             })}
         </div>

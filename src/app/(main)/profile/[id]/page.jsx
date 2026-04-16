@@ -2,7 +2,6 @@
 import FriendsProfile from '../../../../components/ui/othersUi/friendsprofile/FriendsProfile.jsx';
 import React, { Suspense, use } from 'react'
 import Loading from '../../loading.jsx';
-import Data from '../../../../components/ui/othersUi/Data.jsx';
 
 const friendsP = async  () => {
   const res = await fetch('http://localhost:3000/friends.json');
@@ -40,7 +39,7 @@ function ProfileId({params}) {
 
     return (
       <Suspense fallback={<Loading />}>
-        <Data {...{names, friendsPromise}} />
+        <FriendsProfile {...{names, friendsPromise}} />
       </Suspense>
     )
 }

@@ -1,15 +1,23 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { FiPhoneCall } from 'react-icons/fi'
 import { IoVideocamOutline } from 'react-icons/io5'
 import { MdDeleteOutline, MdOutlineArchive } from 'react-icons/md'
 import { RiMessage2Line, RiNotificationSnoozeLine } from 'react-icons/ri'
 
-function Card({friend, setTimelineData}) {
+function Card({friend}) {
 
     const clickHandler = (name, m) => {
+        const date = new Date();
+        const time = date.toLocaleTimeString();
+        const month = date.toLocaleString('en-US', {month: 'long'});
+        const year = date.getFullYear();
+        
+        const oldData = JSON.parse(localStorage.getItem('timelineData')) || [];
         /* console.log(name, m) */
-        setTimelineData(old => [...old, name, m])
+        const newData = [[name, m, time, month, year], ...oldData];
+        
+        localStorage.setItem('timelineData', JSON.stringify(newData))
     }
 
     return (
@@ -60,16 +68,16 @@ function Card({friend, setTimelineData}) {
                 </div>
                 <div className='w-full px-8'>
                     <p>Quick Check-in</p>
-                    <div className='flex justify-between items-center gap-2 p-8'>
-                        <div onClick={()=> clickHandler(friend.name, 'Call')} className='w-40 flex flex-col items-center justify-center py-1.5 shadow-[0_0_12px_rgba(0,0,0,0.2)]'>
+                    <div className='flex flex-wrap justify-center gap-4 p-8'>
+                        <div onClick={()=> clickHandler(friend.name, 'Call')} className='w-40 flex flex-col items-center justify-center py-1.5 shadow-[0_0_12px_rgba(0,0,0,0.2)] cursor-pointer active:scale-[0.9]'>
                             <FiPhoneCall />
                             <p>Call</p>
                         </div>
-                        <div onClick={()=> clickHandler(friend.name, 'Message')} className='w-40 flex flex-col items-center justify-center py-1.5 shadow-[0_0_12px_rgba(0,0,0,0.2)]'>
+                        <div onClick={()=> clickHandler(friend.name, 'Message')} className='w-40 flex flex-col items-center justify-center py-1.5 shadow-[0_0_12px_rgba(0,0,0,0.2)] cursor-pointer active:scale-[0.9]'>
                             <RiMessage2Line />
                             <p>Message</p>
                         </div>
-                        <div onClick={()=> clickHandler(friend.name, 'Video')} className='w-40 flex flex-col items-center justify-center py-1.5 shadow-[0_0_12px_rgba(0,0,0,0.2)]'>
+                        <div onClick={()=> clickHandler(friend.name, 'Video')} className='w-40 flex flex-col items-center justify-center py-1.5 shadow-[0_0_12px_rgba(0,0,0,0.2)] cursor-pointer active:scale-[0.9]'>
                             <IoVideocamOutline />
                             <p>Video</p>
                         </div>
