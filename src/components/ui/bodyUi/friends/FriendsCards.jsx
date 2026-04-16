@@ -2,17 +2,17 @@
 import React, { use, useEffect } from 'react'
 import Cards from './card/Cards.jsx';
 
-function FriendsCards({friendsPromise, setCount, setOnTrack, setActive}) {
+function FriendsCards({friendsPromise, setCount, setOnTrack, setAlmostDue}) {
     const friends = use(friendsPromise);
     console.log(friends)
 
     useEffect(() => {
         const onTracks = friends.filter(item => item.status === 'On-Track')
-        const actives = friends.filter(item => item.status === 'Active')
+        const almostDue = friends.filter(item => item.status === 'Active')
 
         setCount(friends.length)
         setOnTrack(onTracks.length)
-        setActive(actives.length)
+        setAlmostDue(almostDue.length)
     })
 
     return (

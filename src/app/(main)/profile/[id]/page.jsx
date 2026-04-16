@@ -1,7 +1,10 @@
 'use client'
-import React, { use, useEffect, useState } from 'react'
+import FriendsProfile from '../../../../components/ui/othersUi/friendsprofile/FriendsProfile.jsx';
+import React, { Suspense, use } from 'react'
+import Loading from '../../loading.jsx';
+import Data from '../../../../components/ui/othersUi/Data.jsx';
 
-const friendsP = async () => {
+const friendsP = async  () => {
   const res = await fetch('http://localhost:3000/friends.json');
   return res.json()
 }
@@ -34,12 +37,11 @@ function ProfileId({params}) {
 
     const friendsPromise = friendsP();
     console.log(friendsPromise)
-    const friends = use(friendsPromise);
-    console.log(friends)
-    return (
-      <div>
 
-      </div>
+    return (
+      <Suspense fallback={<Loading />}>
+        <Data {...{names, friendsPromise}} />
+      </Suspense>
     )
 }
 

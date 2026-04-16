@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CounterDashboard({count, onTrack, active}) {
+function CounterDashboard({count, onTrack, almostDue}) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 md:gap-24 shadow-lg text-center">
         <div className="stat">
@@ -14,8 +14,8 @@ function CounterDashboard({count, onTrack, active}) {
         </div>
 
         <div className="stat">
-            <div className="stat-value">{active}</div>
-            <div className="stat-title">Active</div>
+            <div className="stat-value">{almostDue}</div>
+            <div className="stat-title">Need Attention</div>
         </div>
 
         <div className="stat">
