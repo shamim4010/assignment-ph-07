@@ -13,7 +13,7 @@ function PieChartStats({timelineData, filterCall, filterMessage, filterVideo}) {
             <h2 className='text-4xl'>Friendship Analytics</h2>
             <p className='text-[12px] ml-4'>By Interaction Type</p>
             <div className='flex flex-col justify-center items-center gap-8 p-12'>
-                {timelineData.length === 0 ? <NoData /> : <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
+                {timelineData.length === 0 ? <NoData /> : <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1}} className='pointer-events-none' responsive>
                     <Pie
                         data={data}
                         innerRadius="80%"
@@ -26,20 +26,20 @@ function PieChartStats({timelineData, filterCall, filterMessage, filterVideo}) {
                         dataKey="value"
                     />
                 </PieChart>}
-                <div>
-                    <div>
+                <div className='flex flex-col sm:flex-row justify-center items-center gap-2'>
+                    <div className='flex gap-2 justify-center items-center'>
                         <div aria-label="status" className="status bg-[#7f37f5] rounded-full"></div> 
                         <span>
                             Message
                         </span>
                     </div>
-                    <div>
+                    <div className='flex gap-2 justify-center items-center'>
                         <div aria-label="status" className="status bg-[#244d3f] rounded-full"></div> 
                         <span>
                             Call
                         </span>
                     </div>
-                    <div>
+                    <div className='flex gap-2 justify-center items-center'>
                         <div aria-label="status" className="status bg-[#37a163] rounded-full"></div> 
                         <span>
                             Video

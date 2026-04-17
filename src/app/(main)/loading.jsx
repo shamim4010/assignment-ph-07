@@ -3,7 +3,7 @@ import { FadeLoader } from 'react-spinners'
 
 function Loading() {
   return (
-    <div><FadeLoader /></div>
+    <div className='flex justify-center items-center m-24'><FadeLoader /></div>
   )
 }
 

@@ -5,7 +5,7 @@ import React from 'react'
 function Cards({friend}) {
   return (
     <Link href={`/profile/${friend.name}`}>
-        <div key={friend.id} className='shadow-[0_0_12px_rgba(0,0,0,0.5)] p-4 w-auto rounded-lg'>
+        <div key={friend.id} className='shadow-[0_0_12px_rgba(0,0,0,0.5)] p-4 rounded-lg'>
             <div className='flex flex-col gap-3 justify-center items-center'>
                 <Image src={friend.picture} alt='image' width={100} height={100} className='rounded-full' />
                 <h2 className='text-2xl'>{friend.name}</h2>
