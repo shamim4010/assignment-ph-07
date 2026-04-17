@@ -8,7 +8,7 @@ function FriendsCards({friendsPromise, setCount, setOnTrack, setAlmostDue}) {
 
     useEffect(() => {
         const onTracks = friends.filter(item => item.status === 'On-Track')
-        const almostDue = friends.filter(item => item.status === 'Active')
+        const almostDue = friends.filter(item => item.status === 'Almost Due')
 
         setCount(friends.length)
         setOnTrack(onTracks.length)
