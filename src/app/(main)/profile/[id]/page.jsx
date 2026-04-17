@@ -4,7 +4,9 @@ import React, { Suspense, use } from 'react'
 import Loading from '../../loading.jsx';
 
 const friendsP = async  () => {
-  const res = await fetch('http://localhost:3000/friends.json');
+  const res = await fetch('https://keenkeeper-ph.vercel.app/friends.json', {
+    cache: 'no-store'
+  });
   return res.json()
 }
 
